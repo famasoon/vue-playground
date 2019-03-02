@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const extendConfig = require('./webpack.config.extend')
 
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
   */
   loading: { color: '#fff' },
 
+  extensions: ['ts', 'js'],
   /*
   ** Global CSS
   */
@@ -50,7 +52,8 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+      extendConfig(config)
+      return
     }
   }
 }
